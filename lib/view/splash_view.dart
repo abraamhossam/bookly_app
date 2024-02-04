@@ -6,8 +6,10 @@ class SplashView extends StatelessWidget {
   static String id = "/splashview";
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SplashViewBody(),
+    return const SafeArea(
+      child: Scaffold(
+        body: SplashViewBody(),
+      ),
     );
   }
 }

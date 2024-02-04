@@ -1,10 +1,9 @@
-import 'package:bookly_app/view/widgets/appbar_book_view_body.dart';
-
-import 'package:bookly_app/view/widgets/book_iteam_body.dart';
-import 'package:bookly_app/view/widgets/book_rate.dart';
+import 'package:bookly_app/utils/sizeconfig.dart';
+import 'package:bookly_app/view/widgets/book_details_body.dart';
+import 'package:bookly_app/view/widgets/book_view_appbar.dart';
+import 'package:bookly_app/view/widgets/book_rating.dart';
 import 'package:bookly_app/view/widgets/book_sale_button.dart';
-import 'package:bookly_app/view/widgets/books_list_view.dart';
-
+import 'package:bookly_app/view/widgets/featured_list_view.dart';
 import 'package:flutter/material.dart';
 
 class BookViewBody extends StatelessWidget {
@@ -12,35 +11,38 @@ class BookViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Column(
       children: [
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
-          child: AppbarBookViewBody(),
+          child: BookViewAppbar(),
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.02,
+          height: SizeConfig.height! * 0.02,
         ),
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
-          child: BookIteamBody(),
+          child: BookDetailsBody(),
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.01,
+          height: SizeConfig.height! * 0.01,
         ),
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
-          child: BookRate(),
+          child: BookRating(
+            mainAxis: MainAxisAlignment.center,
+          ),
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.03,
+          height: SizeConfig.height! * 0.03,
         ),
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: BookSaleButton(),
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.03,
+          height: SizeConfig.height! * 0.03,
         ),
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
@@ -56,14 +58,14 @@ class BookViewBody extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.01,
+          height: SizeConfig.height! * 0.01,
         ),
         Padding(
           padding: const EdgeInsets.only(left: 20),
           child: SizedBox(
-            height: MediaQuery.of(context).size.height * 0.15,
-            child: BooksListView(
-              width: MediaQuery.of(context).size.width * 0.2,
+            height: SizeConfig.height! * 0.15,
+            child: FeaturedListView(
+              width: SizeConfig.width! * 0.2,
             ),
           ),
         ),

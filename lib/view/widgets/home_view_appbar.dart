@@ -1,21 +1,22 @@
-import 'package:bookly_app/model/assets.dart';
-
+import 'package:bookly_app/utils/assets.dart';
+import 'package:bookly_app/utils/sizeconfig.dart';
 import 'package:bookly_app/view/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AppbarHomeViewBody extends StatelessWidget {
-  const AppbarHomeViewBody({super.key});
+class HomeViewAppbar extends StatelessWidget {
+  const HomeViewAppbar({super.key});
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Padding(
       padding: const EdgeInsets.only(right: 16),
       child: Row(
         children: [
           Image.asset(
             Assets.logo,
-            height: 20,
+            height: SizeConfig.height! * 0.026,
           ),
           const Spacer(),
           IconButton(

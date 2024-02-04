@@ -1,15 +1,17 @@
 import 'package:bookly_app/constants.dart';
-import 'package:bookly_app/model/assets.dart';
+import 'package:bookly_app/utils/sizeconfig.dart';
 import 'package:bookly_app/view/book_view.dart';
-import 'package:bookly_app/view/widgets/book_rate.dart';
+import 'package:bookly_app/view/widgets/book_rating.dart';
+import 'package:bookly_app/view/widgets/featured_list_view_iteam.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class BestSellerBookIteam extends StatelessWidget {
-  const BestSellerBookIteam({super.key});
+class BestSellerBookListViewIteam extends StatelessWidget {
+  const BestSellerBookListViewIteam({super.key});
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Padding(
       padding: const EdgeInsets.only(
         bottom: 20,
@@ -19,24 +21,27 @@ class BestSellerBookIteam extends StatelessWidget {
           Get.toNamed(BookView.id);
         },
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(
-              Assets.testImage,
-              height: 130,
+            FeaturedListViewIteam(
+              widthImage: SizeConfig.width! * 0.22,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 30),
+            SizedBox(
+              width: SizeConfig.width! * 0.06,
+            ),
+            SizedBox(
+              width: SizeConfig.width! * 0.6,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.5,
+                    width: MediaQuery.of(context).size.width * 0.6,
                     child: const Text(
                       "Harry Potter and the Goblet of Fire ",
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 22,
                         fontWeight: FontWeight.bold,
                         fontFamily: kFontFamily,
                       ),
@@ -48,19 +53,17 @@ class BestSellerBookIteam extends StatelessWidget {
                       fontSize: 16,
                     ),
                   ),
-                  Row(
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
+                      Text(
                         "19.99€",
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.1,
-                      ),
-                      const BookRate(),
+                      BookRating(),
                     ],
                   ),
                 ],

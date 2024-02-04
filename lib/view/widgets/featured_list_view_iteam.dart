@@ -1,8 +1,8 @@
-import 'package:bookly_app/model/assets.dart';
+import 'package:bookly_app/utils/assets.dart';
 import 'package:flutter/material.dart';
 
-class BookIteam extends StatelessWidget {
-  const BookIteam({
+class FeaturedListViewIteam extends StatelessWidget {
+  const FeaturedListViewIteam({
     super.key,
     required this.widthImage,
   });
@@ -12,7 +12,7 @@ class BookIteam extends StatelessWidget {
     return SizedBox(
       width: widthImage,
       child: AspectRatio(
-        aspectRatio: 2 / 4,
+        aspectRatio: 2 / 3,
         child: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(

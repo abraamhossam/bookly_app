@@ -1,9 +1,9 @@
-import 'package:bookly_app/view/widgets/book_iteam.dart';
+import 'package:bookly_app/view/widgets/featured_list_view_iteam.dart';
 
 import 'package:flutter/material.dart';
 
-class BookIteamBody extends StatelessWidget {
-  const BookIteamBody({super.key});
+class BookDetailsBody extends StatelessWidget {
+  const BookDetailsBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class BookIteamBody extends StatelessWidget {
       children: [
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.35,
-          child: BookIteam(
+          child: FeaturedListViewIteam(
             widthImage: MediaQuery.of(context).size.width * 0.48,
           ),
         ),

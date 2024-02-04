@@ -16,8 +16,12 @@ class CustomTextField extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        suffixIcon:
-            IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+        suffixIcon: IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.search,
+          ),
+        ),
       ),
     );
   }
